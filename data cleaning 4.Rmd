@@ -1,0 +1,52 @@
+---
+title: "data cleaning 4"
+output: html_notebook
+---
+
+
+```{r}
+#Correct the Household Size columnn names after importing to R
+
+```
+
+
+```{r}
+#Convert zeros to NA for missing data in preparation for RF; df4 is the combined survey with the serology data after data cleaning 3
+df4[df4==0] <- NA
+```
+
+```{r}
+#summarize data to see how many missing values are in each 
+#column/feature
+summary(df4)
+```
+
+
+```{r}
+#Import missForest to impute missing values for mixed variable/
+#feature types
+library(missForest)
+```
+```{r}
+#Impute missing values using missForest; df4missing updated df4 frame
+df4missing<-missForest(df4)
+```
+
+
+```{r}
+#Ensure data was imputed with missForest
+class(df4missing)
+```
+
+```{r}
+#Call the new data frame (impdf2) with the new imputed values
+impdf2<-df2missing$ximp
+impdf2
+```
+
+```{r}
+#summarize impdf2 to show that missing values have been replaced
+#with missForest imputation
+summary(impdf2)
+```
+

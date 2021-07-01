@@ -1,0 +1,131 @@
+---
+title: "data cleaning 2"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+#Convert Livestock to 3 factors
+df2$Livestock<-factor(df2$Livestock, levels=c(1,2,3),
+                             labels=c("Yes", "No","Prefer Not To Say"))
+```
+
+```{r}
+#Convert WildContact to 3 factors
+df2$WildContact<-factor(df2$WildContact, levels=c(1,2,3),
+                             labels=c("Yes", "No","Prefer Not To Say"))
+```
+
+```{r}
+#Convert TypeWildcontact to 6 factors
+df2$TypeWildContact<-factor(df2$TypeWildContact, levels=c(1,2,3,4,5,6),
+                             labels=c("Insects", "Fish","Reptiles","Amphibians", "Birds", "Mammals"))
+```
+
+```{r}
+#Convert HowObtainWildanimals to 8 factors
+df2$HowObtainedWildAnimals<-factor(df2$HowObtainedWildAnimals, levels=c(1,2,3,4,5,6,7,8),
+                             labels=c("Catch Them From The Forest", "Order Them From Dealers","Buy Them From Traders Within The Village","Given From Family, Friends, Neighbor", "Buy Them From Wildlife Farms/Breeders/Farms name", "Buy Them From Local Markets/Name","Buy Them From Border Markets/Name","Other"))
+```
+
+```{r}
+  #Convert ContactWithWildAnimals to 7 factors
+df2$ContactWithWildAnimals<-factor(df2$ContactWithWildAnimals, levels=c(1,2,3,4,5,6,7),
+                             labels=c("I Consume Them As Food", "I Consume Them As Traditional Medicine","I Own As Exotic Pets", "I Collect As Souevenirs","I Am A Wildlife Trader","I Catch Them From The Forest","I Work As Animal Keeper At"))
+```
+
+```{r}
+#Convert WhichWildlifeProductBuy to 12 factors
+df2$WhichWildlifeProductBuy<-factor(df2$WhichWildlifeProductBuy, levels=c(1,2,3,4,5,6,7,8,9,10,11,12),
+                             labels=c("Still alive", "Whole Animal,Fresh","Whole Animal,Dry","Meat Parts,Fresh","Meat Parts,Dry","Internal Organs", "Fresh Blood","Fresh Skin","Dry Skin","Bone, Fresh/Dry","Already Cooked As Food","Other"))
+```
+
+```{r}
+#Convert SpendOnwildlifedish to 4 factors
+df2$SpendOnWildlifeDish<-factor(df2$SpendOnWildlifeDish, levels=c(1,2,3,4),
+                             labels=c("It should be the same as normal dish","A little more expensive than normal dish is acceptable",
+"No more than twice as much is acceptable","I am always happy to spend on wildlife dish, no matter how much it is"))
+```
+
+```{r}
+#Convert Whereeatwildlifedish to 5 factors
+df2$WhereEatWildlifeDish<-factor(df2$WhereEatWildlifeDish, levels=c(1,2,3,4,5),
+                             labels=c("Cook Them At Home","Local Restaurants","High-End Restaurants","Buy Them Cooked From Local Markets","BUy Them Cooked From Local Supermarkets"))
+```
+
+```{r}
+#Convert WhoPrepareswildlife to 5 factors
+df2$WhoPreparesWildlife<-factor(df2$WhoPreparesWildlife, levels=c(1,2,3,4,5),
+                             labels=c("I Cook Them All By Myself","I cook Them With Help From Others","Other Family Members/Friends/Neighbors Cook Them For Me","Chef At The Restaurants","I Only Buy Ready To Eat/Cooked/Half Cooked/Rare"))
+
+```
+
+```{r}
+#Convert Whichcookingmethod to 6 factors
+df2$WhichCookingMethod<-factor(df2$WhichCookingMethod, levels=c(1,2,3,4,5,6),
+                             labels=c("I Eat Them Fresh/Raw","Boil/Add In Soup","Grill/Bake","Fry/Stir Fry", "Steam","other"))
+
+```
+```{r}
+#Convert Howcooked to 5 factors
+df2$HowCooked<-factor(df2$HowCooked, levels=c(1,2,3,4,5),
+                             labels=c("Thoroughly Cooked","Half Cooked/Under Cooked","Fresh/Rare","Dry","Depends on Menus"))
+
+```
+
+```{r}
+#Convert PartsDisposed to 5 factors
+df2$`Parts Disposed`<-factor(df2$`Parts Disposed`, levels=c(1,2,3,4,5),
+                             labels=c("Together With Other Rubbishes As Usual","Put in Bag Seperate From Other Rubbishes","Bive it to My Pets Cooked/Uncooked","Bury/Burn it Thoroughly","other"))
+
+```
+
+```{r}
+#Convert HowLongAtwork to 5 factors
+df2$HowLongAtWork<-factor(df2$HowLongAtWork, levels=c(1,2,3,4,5),
+                             labels=c("Less than 1 Year","Around 1 Year","Between 1-5 Years","Between 5-10 Years","More Than 10 Years"))
+
+```
+
+```{r}
+#Convert Training to 3 factors
+df2$Training<-factor(df2$Training, levels=c(1,2,3),
+                             labels=c("Yes","No","PreferNotToSay"))
+
+```
+
+```{r}
+#Convert TypeAnimalsForJob to 6 factors
+df2$TypeAnimalsForJob<-factor(df2$TypeAnimalsForJob, levels=c(1,2,3,4,5,6),
+                             labels=c("Insect","Fish","Reptile","Amphibians","Birds","Mammals"))
+
+```
+
+```{r}
+#Convert Accident to 3 factors
+df2$Accident<-factor(df2$Accident, levels=c(1,2,3),
+                             labels=c("Yes","No","Prefer Not To Say"))
+
+```
+
+```{r}
+#Convert WearProtection to 3 factors
+df2$WearProtection<-factor(df2$WearProtection, levels=c(1,2,3),
+                             labels=c("Yes","No","Prefer Not To Say"))
+
+```
+
+```{r}
+#Convert FamilyFriendsIll to 3 factors
+df2$FamilyFriendsIll<-factor(df2$FamilyFriendsIll, levels=c(1,2,3),
+                             labels=c("Yes","No","Prefer Not To Say"))
+
+```
+
+```{r}
+write.csv(df2, "C:/Users/rothg/Desktop/Dissertation Proposal/df2demographicsandquesions.csv", row.names=TRUE)
+```
+

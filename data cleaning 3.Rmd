@@ -1,0 +1,136 @@
+---
+title: "data cleaning 3"
+output: html_notebook
+---
+
+```{r}
+df2<-df2demographicsandquesions
+```
+
+
+```{r}
+#Convert Attitudeconsumingwildlife to 3 factors
+df2$AttitudeConsumingWildlife<-factor(df2$AttitudeConsumingWildlife, levels=c(1,2,3),
+                             labels=c("Totally Acceptable","Neutral","Totally Acceptable"), ordered=TRUE)
+```
+
+```{r}
+#Convert AttitudeWildlifeMedicine to 3 factors
+df2$AttitudeWildlifeMedicine<-factor(df2$AttitudeWildlifeMedicine, levels=c(1,2,3),
+                             labels=c("Acceptable","Neutral","Totally Unacceptable"), ordered = TRUE)
+```
+
+```{r}
+#Convert Attitudewildlifepets to 3 factors
+df2$AttitudeWildlifePets<-factor(df2$AttitudeWildlifePets, levels=c(1,2,3),
+                             labels=c("Acceptable","Neutral","Totally Unacceptable"),ordered = TRUE)
+```
+
+```{r}
+#Convert Attitudewildlifesouvenirs to 3 factors
+df2$AttitudeWildlifeSouvenirs<-factor(df2$AttitudeWildlifeSouvenirs, levels=c(1,2,3),
+                             labels=c("Acceptable","Neutral","Totally Uncacceptable"),ordered = TRUE)
+```
+
+```{r}
+#Convert AttitudeTradingwildlife to 3 factors
+df2$AttitudeTradingWildlife<-factor(df2$AttitudeTradingWildlife, levels=c(1,2,3),
+                             labels=c("Acceptable","Neutral","Totally Unacceptable"),ordered = TRUE)
+```
+
+```{r}
+#Convert Attitudecatchingwildlife to 3 factors
+df2$AttitudeCatchingWildlife<-factor(df2$AttitudeCatchingWildlife, levels=c(1,2,3),
+                             labels=c("Acceptable","Neutral","Totally Unacceptable"),ordered = TRUE)
+```
+
+```{r}
+#Convert Attitudereleasingwildlife to 3 factors
+df2$AttitudeReleasingWildlife<-factor(df2$AttitudeReleasingWildlife, levels=c(1,2,3),
+                             labels=c("Acceptable","Neutral","Totally Unacceptable"),ordered=TRUE)
+```
+
+```{r}
+df2$KnowledgeWildlifeHarmful <- factor(df2$KnowledgeWildlifeHarmful,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+```{r}
+df2$KnowledgeHarmfulToLivestock <- factor(df2$KnowledgeHarmfulToLivestock,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+```{r}
+df2$KnowledgeTradingHurtfulEnvironment <- factor(df2$KnowledgeTradingHurtfulEnvironment,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+
+```{r}
+df2$KnowledgeSpeciesEndangerment <- factor(df2$KnowledgeSpeciesEndangerment,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+```{r}
+df2$KnowledgeConsumingWildlifeSafe <- factor(df2$KnowledgeConsumingWildlifeSafe,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+```{r}
+df2$KnowledgeWildlifePet <- factor(df2$KnowledgeWildlifePet,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+```{r}
+df2$KnowledgeWildlifeNoDiseases <- factor(df2$KnowledgeWildlifeNoDiseases,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+```{r}
+df2$KnowledgeIllFromContact <- factor(df2$KnowledgeIllFromContact,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+```{r}
+df2$KnowledgeWildlifeConservation <- factor(df2$KnowledgeWildlifeConservation,
+  levels = c(0, 1),
+  labels = c("True", "False"),
+  ordered = TRUE
+)
+```
+
+```{r}
+df2$CanWildlifeTransmitDiseases <- factor(df2$CanWildlifeTransmitDiseases,
+  levels = c(1,2,3),
+  labels = c("Yes", "No","Not Sure"))
+
+```
+
+```{r}
+write.csv(df2, "C:/Users/rothg/Desktop/Dissertation Proposal/df2.csv", row.names=TRUE)
+```
+

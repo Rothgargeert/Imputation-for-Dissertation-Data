@@ -1,0 +1,85 @@
+---
+title: "data cleaning"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+str(df2) #structure of the data
+```
+
+
+
+```{r}
+#Convert Village to factor with 20 variables which are the village names
+df2$Village <- factor(df2$Village,
+levels = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20),
+labels = c("Chrokhley", "Pou Andet","Varin1","Ta ngen",
+           "Meanrith","Thkouv","Battambang","Phnomsampov","Varin3",
+            "Phsarchhnang","Chreythom","Bostrobek","Thmey","Baydamram",
+            "PhteasSrea","Borbous","Andoungrouveang","Kampongkou",
+            "Preksbov","PrekTadol")) 
+
+```
+
+```{r}
+#Check Village to make sure it has 20 levels with Village names
+str(df2$Village)
+
+```
+```{r}
+#Convert Gender to factor with 2 levels: Male and Female
+df2$Gender<-factor(df2$Gender,
+                   levels=c(1,2),
+                   labels=c("Male","Female"))
+```
+```{r}
+#Convert Age to factor with 4 levels
+df2$Age<-factor(df2$Age,
+                   levels=c(1,2,3,4),
+                   labels=c("<20","20-39","40-59",">60"))
+```
+
+```{r}
+#Convert Marital Status to Factor with 4 levels
+df2$'Marital Status'<-factor(df2$`Marital Status`,
+                   levels=c(1,2,3,4),
+                   labels=c("Single","Married","Divorced","Other"))
+```
+```{r}
+#Convert Ethnicity to 3 levels
+df2$Ethnicity<-factor(df2$Ethnicity,
+                   levels=c(1,2,3),
+                   labels=c("Cambodian","Other     Minorities","Foreigner"))
+```
+
+```{r}
+#Convert Religion to 4 levels
+df2$Religion<-factor(df2$Religion,
+                   levels=c(1,2,3,4),
+                   labels=c("Buddhism","Christian","Islamic","Other"))
+```
+
+```{r}
+#Convert Ed Level to 6 levels
+df2$`Ed Level`<-factor(df2$`Ed Level`, levels=c(1,2,3,4,5,6),
+                       labels=c("None", "Primary School", "Secondary School/College","Bachelor Degree", "Higher Than Bachelor Degree", "Other"))
+```
+```{r}
+#Convert Occupation to 7 factor levels
+df2$Occupation<-factor(df2$Occupation, levels=c(1,2,3,4,5,6,7),
+                       labels=c("Unemployed", "Agricultures", "Fisheries", "Business Owner","Government Employee","Private Sector Employee", "Other"))
+```
+
+```{r}
+#Convert Monthly Income to 4 factors
+df2$`Monthly Income`<-factor(df2$`Monthly Income`, levels=c(1,2,3,4),
+                             labels=c("<500", "501-1000","1001-1500",">1500"))
+```
+```{r}
+write.csv(df2, "C:/Users/rothg/Desktop/Dissertation Proposal/df2demographics.csv", row.names=TRUE)
+```
+

@@ -1,0 +1,62 @@
+---
+title: "data cleaning 5 impdf4"
+output: html_notebook
+---
+
+
+
+```{r}
+#Convert MFI values to factor/binary classes with >=1000 as #positive(likely to have the specific zoonotic disease) and <1000 as #Negative (Not likely to have zoonotic disease)
+impdf4$MENV <- factor(ifelse(impdf4$df4t>=1000, "positive", "negative"))
+```
+
+```{r}
+impdf4$MENV = ifelse(impdf4$MENV>=1000,1,0)
+```
+
+```{r}
+impdf4$SARS.COV = ifelse(impdf4$SARS.COV>=1000,1,0)
+
+impdf4$BOMBV = ifelse(impdf4$BOMBV>=1000,1,0)
+
+impdf4$EBOV = ifelse(impdf4$EBOV>=1000,1,0)
+
+impdf4$BDBV = ifelse(impdf4$BDBV>=1000,1,0)
+```
+
+```{r}
+impdf4$TAFV = ifelse(impdf4$TAFV>=1000,1,0)
+
+impdf4$SUDV = ifelse(impdf4$SUDV>=1000,1,0)
+
+impdf4$RESTm = ifelse(impdf4$RESTm>=1000,1,0)
+
+impdf4$MARV = ifelse(impdf4$MARV>=1000,1,0)
+```
+
+```{r}
+impdf4$RAVV = ifelse(impdf4$RAVV>=1000,1,0)
+
+impdf4$LLOV = ifelse(impdf4$LLOV>=1000,1,0)
+
+impdf4$MLAV = ifelse(impdf4$MLAV>=1000,1,0)
+
+impdf4$MOCK = ifelse(impdf4$MOCK>=1000,1,0)
+```
+
+```{r}
+impdf4$MOJV = ifelse(impdf4$MOJV>=1000,1,0)
+
+impdf4$NIV = ifelse(impdf4$NIV>=1000,1,0)
+
+impdf4$HEV = ifelse(impdf4$HEV>=1000,1,0)
+
+impdf4$CEDV = ifelse(impdf4$CEDV>=1000,1,0)
+
+impdf4$GHV = ifelse(impdf4$GHV>=1000,1,0)
+```
+
+```{r}
+write.csv(impdf4, "C:/Users/rothg/Desktop/Dissertation Proposal/impdf4bin.csv", row.names=TRUE)
+```
+
